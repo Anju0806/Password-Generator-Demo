@@ -21,6 +21,7 @@ https://anju0806.github.io/password-generator-demo/
 ## Screenshots
 ![screencapture-127-0-0-1-5500-02-Challenge-Develop-index-html-2023-04-01-17_16_58](https://user-images.githubusercontent.com/126565826/229277555-b9ee3255-2ee1-4b00-bc31-bb3c577e94c8.png)
 ![screencapture-127-0-0-1-5500-02-Challenge-Develop-index-html-2023-04-01-17_18_50](https://user-images.githubusercontent.com/126565826/229277567-c6f319bd-ca4d-4bb0-894e-2de75b7e3054.png)
+![screencapture-127-0-0-1-5500-02-Challenge-Develop-index-html-2023-04-01-17_20_47](https://user-images.githubusercontent.com/126565826/229277639-70c9cdcf-35b1-42ee-be80-d450fbe52943.png)
 
 
 ## Acceptance Criteria
