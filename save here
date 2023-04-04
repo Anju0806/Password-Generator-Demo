@@ -1,0 +1,104 @@
+
+// assignment code
+var generateBtn = document.querySelector("#generate");
+
+
+//declaring variables
+var length=0;
+var lowercase=false;
+var uppercase=false;
+var numeric=false;
+var symbols=false;
+var numbers=false;
+var charset="";
+var password="";
+
+
+//define a function to generate a charset(from this charset we are generating the random password)
+function define_charset(uppercase,lowercase,numbers,symbols){
+  charset="";
+  if(uppercase){  
+    charset= charset.concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  }
+  if(lowercase){
+    charset= charset.concat('abcdefghijklmnopqrstuvwxyz');
+  }
+  if(numbers){
+    charset= charset.concat('0','1','2','3','4','5','6','7','8','9');
+  }
+  if(symbols){
+    //avoiding symbols in bracket password '(',')','{','}','[',']','|','/'
+    charset= charset.concat(':','!','#','$','%','&','*','+','-','/','<','=','>','?','@','^','~','_');
+  }
+  return charset;
+}
+
+
+//random password generator
+function randompassgenerator(length,uppercase,lowercase,numbers,symbols){
+  password = "";
+    var charset1=define_charset(uppercase,lowercase,numbers,symbols);
+    for (var i = 0, n = charset1.length; i < length; ++i) {
+        password += charset1.charAt(Math.floor(Math.random() * n));
+    }
+    alert("Your customized password is "+password);
+    return password;  
+}
+
+
+//define a function to validate length
+function validate_length(length){
+  if(isNaN(length)){
+    alert("please select a valid number for password length");
+    return false;
+  }
+  else if(length<8 || length>128){
+    alert("please select a valid length between 8 and 128");
+    return false;
+  }
+  return true;
+}
+ 
+
+//define a function to validate if atleast one of the type are selected(uppercase,lowercase,numbers,symbols)
+function validate_types_selected(uppercase,lowercase,numbers,symbols){
+  if(uppercase==false && lowercase==false && numbers==false && symbols==false)
+  {
+    alert("please select atleast one type from uppercase,lowercase,numbers or symbols for your password");
+    return false;
+  }
+  return true;
+}
+
+
+//creating a function generate password,which returns a password if length validated and atleast one type selected.
+function generatePassword() {
+  alert("Customize your password with a few clicks!!");
+  //accept input from user
+  length=prompt("Enter the desired length of password (between 8 and 128):");
+  if(validate_length(length)){
+    var uppercase=confirm("Do you want your password to include uppercase characters?");
+    var lowercase=confirm("Do you want your password to include lowercase characters?");
+    var numbers=confirm("Do you want your password to include numbers?");
+    var symbols=confirm("Do you want your password to include symbols?");
+    if(validate_types_selected(uppercase,lowercase,numbers,symbols)){                           //should have atleast one character type selected
+      return(randompassgenerator(length,uppercase,lowercase,numbers,symbols));                  //generate a random password and return it
+    }
+  }
+  return "Please try again";
+}
+ 
+
+// write password to box after generation
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
