@@ -7,8 +7,7 @@ An application that an employee can use to generate a customized password.
 N/A
 
 ## Usage
-To use Portfolio-demo webpage webpage, you can access the content using the navigation bar, The header is fixed to top,on the scroll down page.
-It contains link to a section with titled images of the developer's applications. It is presented with a responsive layout that adapts to my viewport.
+An application that an employee can use to generate a random password based on criteria they've selected. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code
 
 
 ## Links
@@ -43,7 +42,7 @@ THEN the password is either displayed in an alert and written to the page.
 
 
 ## Credits
-function for password generation:
+function for random number generation:
 https://stackoverflow.com/questions/1497481/javascript-password-generator
 
 ## License
